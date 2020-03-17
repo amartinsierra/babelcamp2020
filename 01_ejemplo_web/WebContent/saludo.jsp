@@ -9,7 +9,7 @@
 <body>
 	<center>
 		<%for(int i=1;i<=6;i++){ %>
-			<h<%=i%>>Bienvenido a JSP en Java EE</h<%=i%>>
+			<h<%=i%>>Bienvenido a JSP </h<%=i%>>
 		<%} %>
 	</center>
 </body>

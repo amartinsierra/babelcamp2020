@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Tabla de multiplicaciones</h1>
-	<table border="1">
+	<table border="2">
 		<%for(int i=1;i<=10;i++){ %>	
 			<tr>
 			<%for(int j=1;j<=10;j++){ %>
