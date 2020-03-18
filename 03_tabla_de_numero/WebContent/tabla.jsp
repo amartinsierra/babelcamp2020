@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.Date,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,9 @@
 				</tr>
 			<%} %>	
 		</table>
+		<br/><br/>
+		<%=new Date()%>
+		
 	</center>
 </body>
 </html>
