@@ -4,6 +4,12 @@
   <artifactId>02_agenda_spring_web_jpa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <properties>
+  	<spring-version>5.2.2.RELEASE</spring-version>
+  	<mysql-version>8.0.18</mysql-version>
+  	<hibernate-version>5.4.10.Final</hibernate-version>
+  </properties>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -28,44 +34,44 @@
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-core</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency> 
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-web</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-jdbc</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-orm</artifactId>
-	    <version>5.2.2.RELEASE</version>
+	    <version>${spring-version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.18</version>
+	    <version>${mysql-version}</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
-	    <version>5.4.10.Final</version>
+	    <version>${hibernate-version}</version>
 	</dependency>
   </dependencies>
 </project>
