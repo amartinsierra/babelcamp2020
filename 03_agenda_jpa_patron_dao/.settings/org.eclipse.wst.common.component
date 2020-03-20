@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="02_agenda_spring_web_jpa-0.0.1-SNAPSHOT">
+                
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                
+        <property name="java-output-path" value="/02_agenda_spring_web_jpa/build/classes"/>
+        <property name="context-root" value="03_agenda_jpa_patron_dao"/>
+            
+    </wb-module>
+    
+</project-modules>

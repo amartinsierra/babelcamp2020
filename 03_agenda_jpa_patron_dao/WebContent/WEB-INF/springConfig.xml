@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- permitir configuración basada en anotaciones -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.curso.service,com.curso.dao"/>
+	<!-- configuración datasource -->
+	<bean id="data"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3307/agenda2?serverTimezone=UTC">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	
+	<!-- configuración integracnion Spring - JPA - Hibernate -->
+	
+	<!-- Adaptador JPA - Hibernate -->	
+	<bean id="adapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="databasePlatform"
+			value="org.hibernate.dialect.MySQLDialect">
+		</property>
+	</bean>
+	
+	<!-- configuración JPA -->
+	
+	<bean id="factory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="contactosPU"></property>
+		<property name="dataSource" ref="data"></property>
+		<property name="packagesToScan" value="com.curso.model"></property>
+		<property name="jpaVendorAdapter" ref="adapter"></property>
+	</bean>
+	
+	<!-- configuración de transaccionalidad -->
+	
+	<bean id="txManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="factory"></property>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager"/>
+	
+</beans>
