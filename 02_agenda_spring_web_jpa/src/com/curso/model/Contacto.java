@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="contactos")
 @NamedQuery(name="Contacto.findAll", query="SELECT c FROM Contacto c")
+@NamedQuery(name="Contacto.deleteByName", query="Delete from Contacto c where c.nombre=?1")
 public class Contacto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
