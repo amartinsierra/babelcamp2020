@@ -37,6 +37,7 @@ public class ContactosController {
 	@GetMapping(value="/eliminar")
 	public String eliminarContacto(@RequestParam("idContacto") int idContacto) {
 		service.eliminarContacto(idContacto);
-		return "contactos";
+		return "forward:/contactos"; //se pasa el control al método asociado a esa url
+		//return "contactos";
 	}
 }

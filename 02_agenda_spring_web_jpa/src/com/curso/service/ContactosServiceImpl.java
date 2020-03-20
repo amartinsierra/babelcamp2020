@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,8 +26,11 @@ public class ContactosServiceImpl implements ContactosService {
 
 	@Override
 	public List<Contacto> recuperarContactos() {
-		// TODO Auto-generated method stub
-		return null;
+		String jpql="Select c From Contacto c";
+		/*Query query=em.createQuery(jpql);
+		return (List<Contacto>)query.getResultList();*/
+		TypedQuery<Contacto> query=em.createQuery(jpql,Contacto.class);
+		return query.getResultList();
 	}
 	@Transactional
 	@Override
