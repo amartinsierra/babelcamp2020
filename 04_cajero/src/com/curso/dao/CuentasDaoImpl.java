@@ -35,5 +35,12 @@ public class CuentasDaoImpl implements CuentasDao{
 		String jpql="Select c From Cuenta c where c.movimientos join Movimiento m where m.operacion=?1";
 		return null;
 	}
+
+	@Override
+	public List<Cuenta> cuentasCliente(int idCliente) {
+		// join explicito
+		String jpql="select c From Cuenta c where c.clientes join Cliente cl where cl.idCliente=?1";
+		return null;
+	}
 	
 }

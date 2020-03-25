@@ -26,9 +26,9 @@ public class Movimiento implements Serializable {
 
 	private String operacion;
 
-	//name: nombre de la foreign key y referenceColumnName nombre de la primary key
+	//bi-directional many-to-one association to Cuenta
 	@ManyToOne
-	@JoinColumn(name="idCuenta", referencedColumnName = "numeroCuenta")
+	@JoinColumn(name="idCuenta",referencedColumnName ="numeroCuenta" )
 	private Cuenta cuenta;
 
 	public Movimiento() {

@@ -9,4 +9,6 @@ public interface CuentasDao {
 	List<Movimiento> movimientosCuenta(int numeroCuenta);
 	List<Movimiento> movimientosCuenta(String tipoCuenta);
 	List<Cuenta> cuentasTipoMovimiento(String tipoMovimiento);
+	
+	List<Cuenta> cuentasCliente(int idCliente);
 }

@@ -26,6 +26,10 @@ public class Cuenta implements Serializable {
 	@OneToMany(mappedBy="cuenta")
 	private List<Movimiento> movimientos;
 
+	//bi-directional many-to-many association to Cliente
+	@ManyToMany(mappedBy="cuentas")
+	private List<Cliente> clientes;
+
 	public Cuenta() {
 	}
 
@@ -73,6 +77,14 @@ public class Cuenta implements Serializable {
 		movimiento.setCuenta(null);
 
 		return movimiento;
+	}
+
+	public List<Cliente> getClientes() {
+		return this.clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 }
